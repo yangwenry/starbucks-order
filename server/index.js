@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 app.get('/api/coffee/list', (req, res) => {
     const categories = req.query.categories
     let params = {}
-    if(categories !== '') {
+    if(categories) {
         params = {
             categories
         }
@@ -49,7 +49,15 @@ app.post('/api/coffee/register', (req, res) => {
 
 app.get('/api/coffee/update', (req, res) => {
     //console.log(req.query)
-    Coffee.findOneAndUpdate({_id: req.query.id}, { calories: req.query.calories, categories: req.query.categories }, (err, coffee) => {
+    Coffee.findOneAndUpdate({_id: req.query.id}, { calories: req.query.calories, categories: req.query.categories, image: req.query.image }, (err, coffee) => {
+        if(err) return res.json({success: false, err})
+        res.json({success: true})
+    })
+})
+
+app.post('/api/coffee/update-image', (req, res) => {
+    //console.log(req.query)
+    Coffee.findOneAndUpdate({_id: req.body.id}, { image: req.body.image }, (err, coffee) => {
         if(err) return res.json({success: false, err})
         res.json({success: true})
     })

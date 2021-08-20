@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+
+
+
+
+#container { width:100%; }
+
+#topWrap {height:100% !important;}
+.main-visual_wrap {background-position:center; background-repeat:no-repeat; background-size:cover;}
+.main-visual_wrap.img_type {position:relative;left:50%;top:0;width:2000px;height:645px;margin-left:-1000px;background-position:top center;} /* 202101 ê³ ë„í™” ì¶”ê°€ */
+.main-visual_inner {position:relative; box-sizing:border-box; max-width:1080px; height:100%; margin:0 auto;}
+.main-visual_slogan {opacity:0;}
+
+.set_common img {width:100%;}
+.set_common:after {content:""; display:block;position:absolute; z-index:10;background-position:center top; background-repeat:no-repeat; background-size:contain;} /* 20210208 ìˆ˜ì • */
+.set_common > a {position:absolute; height:100%; top:0; font-size:0; line-height:0; color:transparent;}
+
+.btn_slogan,
+.set_common {position:absolute; opacity:0;}
+
+.btn_slogan{width:125px; height:38px;}
+.btn_slogan a {display:block; width:100%; height:100%;font-size:15px;line-height:34px;border-radius:5px;text-align:center;box-sizing:border-box;}
+.main-visual_wrap.img_type .btn_slogan {top:50%; left:10.5%; margin-top:0 !important; opacity:1;z-index:5;transform: translateY(-50%);} /* 202101 ê³ ë„í™” ì¶”ê°€ */
+.main-visual_wrap.img_type .btn_slogan a {color:#fff; border:2px solid #fff; transition:background-color .5s; -webkit-transition:background-color .5s;}
+.main-visual_wrap.img_type .btn_slogan a:hover {color: #222;background-color: #fff;}
+
+.m-slogan {display:none;}
+.m-drink {display:none;}
+
+@media screen and (max-width:1130px) {
+	.main-visual_wrap.img_type {height: 580px;width: 1500px;margin-left: -750px;} /* 202101 ê³ ë„í™” ì¶”ê°€ */
+	.main-visual_wrap.img_type .btn_slogan {left:12.5%;} /* 202101 ê³ ë„í™” ì¶”ê°€ */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media screen and (max-width: 1000px){
+	.main-visual_wrap.img_type {height: 485px;width: 1000px;margin-left: -500px;} /* 202101 ê³ ë„í™” ì¶”ê°€ */
+	.main-visual_wrap.img_type .btn_slogan {left:25%}
 }
+@media all and (min-width:641px) and (max-width: 875px) {
+	.main-visual_wrap.img_type {height: 370px;}
+}
+@media screen and (max-width:640px) {
+	.main-visual_wrap{min-width:320px;}
+	.main-visual_wrap.img_type {left:0;width:100%;height: 258vw;margin:0;background-size:100% auto;}
+	.main-visual_wrap.img_type .main-visual_inner {position:absolute;left:0;top:0;right:0;bottom:0}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+	.pc-slogan {display:none;}
+	.m-slogan {display:block;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+	.pc-drink {display:none;}
+	.m-drink {display:block;}
 
-.App-link {
-  color: #61dafb;
+	.btn_slogan {position:absolute; bottom:4%; left:50% !important; width:115px; height:34px; margin-left:-57.5px;} /* 20210208 ìˆ˜ì • */
+	.btn_slogan a {font-size:13px;line-height:30px;} /* 20210208 ìˆ˜ì • */
+	.main-visual_wrap.img_type .btn_slogan {top:auto;} /* 202101 ê³ ë„í™” ì¶”ê°€ */
 }
+ 
+ 
+.main-visual_wrap {height:646px; background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_bg.jpg');}
+.main-visual_slogan {max-width:203px;width:22%;padding-top:5.5%;padding-left:7.2%;}
+                    
+.set_common:after {height:91px;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.set_01 {bottom:23%;left:56.6%;width:20%;max-width:208px;}
+.set_02 {bottom:15.9%;left:42.8%;width:18%;max-width:185px;}
+.set_03 {bottom:14.2%;right:1.7%;width:19%;max-width:202px;}                    
+
+.set_01:after {top:1.6%;left:-98.1%;width:91%;max-width:189px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_blended_tit.png');}
+.set_02:after {bottom:19.2%;left:-117.3%;width:110%;max-width:203px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_coldbrew_tit.png');}
+.set_03:after {top:-19%;left:-18.4%;width:111%;max-width:223px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_tea_tit.png');}
+
+.set_01 img {position:relative; z-index:10;}
+.set_02 img {position:relative; z-index:10;}
+.set_02:before {content:'';z-index:9;position:absolute;top:65.9%;right:-18.7%;display:block;max-width:249px;width:134.6%;height:117px;background:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_coldbrew_shadow.png') left top no-repeat;background-size:100% auto;}
+
+.btn_slogan {left:10.5%;margin-top:27px;}
+.btn_slogan a {color:#005481; border:2px solid #005481; transition:background-color .5s; -webkit-transition:background-color .5s;}
+.btn_slogan a:hover {background-color:rgba(255,255,255,0.3);}
+
+/* media queries pc */
+@media screen and (max-width:960px) {
+    .main-visual_wrap {height:600px}
 }
+@media screen and (max-width:800px) {
+    .main-visual_wrap {height:520px;background-color:#f5ecd9;background-position:center bottom;background-size:auto 92%;}
+    .main-visual_slogan {width:20%;padding-left:4.2%;}
+
+    .set_01 {left:55.6%;width:21%;}
+    .set_02 {bottom:12.9%;left:40.8%;width:19%;}
+    .set_03 {width:20%;}
+
+    .set_01:after {width:95%;}
+    .set_02:after {bottom:12.2%;width:111%;}
+    .set_03:after {width:114%;}
+
+    .btn_slogan {left:5.9%;margin-top:17px;}
+}
+/* media queries mobile */
+@media screen and (max-width:640px) {
+    .main-visual_wrap {height:290.84vw;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer3_bg.jpg');background-size:cover;}                        
+    .main-visual_slogan {width:45.8%;max-width:none;padding-top:12.4%;padding-left:14.2%;}
+    
+    .pc-drink {display:none;}
+    .m-drink {display:block;}
+
+    .set_common, .set_common:after {max-width:none;}
+    .set_common {bottom:auto;}
+    
+    .set_01 {top:27.4%;right:9%;left:auto;width:46.61%;}
+    .set_02 {top:40%;right:auto;left:16%;width:36.25%;}
+    .set_03 {bottom:13.1%;width:38.9%;right:-1%;}
+
+    .set_02:before {right:-20.6%;bottom:-10%;max-width:315px;height:146px;width:135.8%;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer3_coldbrew_shadow.png');}
+    
+    .set_01:after {top:-25.8%;left:-2.1%;;width:76%;height:110px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer3_blended_tit.png');}
+    .set_02:after {top:115.5%;bottom:auto;left:-9.2%;width:107.33%;height:110px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer3_coldbrew_tit.png');}
+    .set_03:after {top:auto;right:108.6%;bottom:28.2%;left:auto;width:120.5%;height:77px;background-image:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer3_tea_tit.png');}
+
+    .btn_slogan a {color:#b1cbdd; border-color:#b1cbdd;}                        
+}                        
+       
+
+
+    /* ì„œë¸Œ íƒ€ì´í‹€ 20150515 ì„±ì—°ìš± */
+
+    .sub_tit_wrap { width:100%; height:98px; background:#ffffff; /*padding-top:121px; (74 + 47) */ }
+    .sub_tit_wrap div.sub_tit_inner { width:1100px; height:91px; margin:0 auto; position:relative; }
+    .sub_tit_wrap h2 { font:bold 36px Avenir, Arial, georgia; color:#222222; padding-top:30px; position:relative; }

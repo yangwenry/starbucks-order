@@ -37,6 +37,15 @@ app.get('/api/coffee/list', (req, res) => {
     })
 })
 
+app.get('/api/coffee/:coffeeId', (req, res) => {
+    const coffeeId = req.params['coffeeId'];
+    
+    Coffee.findById(coffeeId, (err, coffee) => {
+        if(err) return res.json({success: false, err})
+        res.json({success: true, coffee})
+    })
+})
+
 app.post('/api/coffee/register', (req, res) => {
     const coffee = new Coffee(req.body);
 

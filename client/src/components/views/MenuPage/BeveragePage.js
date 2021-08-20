@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import MenuItem from './Sections/MenuItem';
+import { Row } from 'antd'
+import { withRouter } from 'react-router-dom'
 
 function BeveragePage() {
 
@@ -22,18 +25,24 @@ function BeveragePage() {
     }, [])
 
     return (
-        <div style={{ width: '85%', margin: '3rem auto' }}>
-            <h3>음료 페이지</h3>
-            {
-                Coffees && Coffees.map((coffee, index) => (
-                    <div>
-                        <h4>{coffee.name}</h4>
-                        <img src={coffee.image} />
-                    </div>
-                ))
-            }
+
+        <div id="wrap">
+            <div className="sub_tit_wrap">
+                <h3>음료 페이지</h3>
+            </div>    
+            <div className="content">
+                <div className="product_list">
+                    <Row gutter={[16, 16]}>
+                    {
+                        Coffees && Coffees.map((coffee, index) => (
+                            <MenuItem key={index} coffee={coffee} />
+                        ))
+                    }                    
+                    </Row>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default BeveragePage
+export default withRouter(BeveragePage)

@@ -5,6 +5,7 @@ import LoginPage from './views/LoginPage/LoginPage';
 import Navibar from './views/NavBar/NavBar'
 import CoffeePage from './views/CoffeePage/CoffeePage';
 import BeveragePage from './views/MenuPage/BeveragePage';
+import MenuDetail from './views/MenuDetail/MenuDetail';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/coffee" component={CoffeePage} />
         <Route exact path="/menu/beverage" component={BeveragePage} />
+        <Route exact path="/detail/:coffeeId" component={MenuDetail} />
         <Route exact path="/login" component={LoginPage} />
       </Switch>  
     </div>  
